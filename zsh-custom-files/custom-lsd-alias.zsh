@@ -1,0 +1,5 @@
+alias ls='lsd --config-file=$HOME/.config/lsd/config.yaml'
+alias l='ls -al'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
