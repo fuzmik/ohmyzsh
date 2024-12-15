@@ -1,4 +1,4 @@
-fastfetch
+#fastfetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -7,29 +7,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 #typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 #typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
-#source $ZSH/zsh-custom-files/ssh-agent.zsh
-# Load pyenv automatically by appending
-# the following to 
-# ~/.bash_profile if it exists, otherwise ~/.profile (for login shells)
-# and ~/.bashrc (for interactive shells) :
-
-#export PYENV_ROOT="$HOME/.pyenv"
-#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
-
-# Restart your shell for the changes to take effect.
-
-# Load pyenv-virtualenv automatically by adding
-# the following to ~/.bashrc:
-
-eval "$(pyenv virtualenv-init -)"
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="zsh-theme-powerlevel10k/powerlevel10k" # set by `omz`
+source $ZSH/zsh-custom-files/pyenv-init.zsh
+source $ZSH/zsh-custom-files/ssh-agent.zsh
+
+ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 
 plugins=(
     git
@@ -41,18 +25,17 @@ plugins=(
     z
     colored-man-pages
     colorize
-    pyenv
     nmap
     ssh-agent
-    conda
     python
     asdf
     kitty
     ssh
     docker
     docker-compose
-    gpg-agent
     pass
+    conda
+    conda-env
 )
 
 source $ZSH/oh-my-zsh.sh
