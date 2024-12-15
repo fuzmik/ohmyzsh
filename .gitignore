@@ -11,4 +11,4 @@ log/
 .vscode
 .idea
 
-.devcontainer
+*.devcontainer
