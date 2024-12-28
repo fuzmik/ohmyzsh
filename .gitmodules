@@ -16,3 +16,6 @@
 [submodule "custom/plugins/conda-zsh-completion"]
 	path = custom/plugins/conda-zsh-completion
 	url = https://github.com/conda-incubator/conda-zsh-completion
+[submodule "fzf-tab"]
+	path = custom/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab.git
