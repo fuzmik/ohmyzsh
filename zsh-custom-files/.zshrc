@@ -11,7 +11,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 
 source $ZSHUSERFILES/pyenv-init.zsh
-#source $ZSHUSERFILES/goenv-init.zsh
+source $ZSHUSERFILES/goenv-init.zsh
 source $ZSHUSERFILES/ssh-agent.zsh
 
 DISABLE_LS_COLORS="true"
