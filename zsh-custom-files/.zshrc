@@ -98,5 +98,5 @@ ZSH_THEME_PYENV_NO_SYSTEM=true
 autoload -U compinit; compinit
 source $ZSH/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
 # end fzf-tab
-source $HOME.autoenv/activate.sh
-source $HOME.asdf/asdf.sh
+source $HOME/.autoenv/activate.sh
+source $HOME/.asdf/asdf.sh
