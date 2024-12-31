@@ -7,4 +7,4 @@ export GCM_CREDENTIAL_STORE=gpg
 BROWSER=brave
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 EDITOR=codium
-export ZSHUSERFILES="$HOME/.ohmyzsh/zsh-custom-files"
+export ZSHUSERFILES="$HOME/.oh-my-zsh/zsh-custom-files"
