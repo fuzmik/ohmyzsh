@@ -10,9 +10,9 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 
-source $ZSH/zsh-custom-files/pyenv-init.zsh
-source $ZSH/zsh-custom-files/goenv-init.zsh
-source $ZSH/zsh-custom-files/ssh-agent.zsh
+#source $ZSHUSERFILES/pyenv-init.zsh
+#source $ZSHUSERFILES/goenv-init.zsh
+source $ZSHUSERFILES/ssh-agent.zsh
 
 DISABLE_LS_COLORS="true"
 
@@ -44,6 +44,8 @@ plugins=(
     docker
     docker-compose
     extract
+    ollama_zsh_completion
+    autoenv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -74,9 +76,11 @@ setopt appendhistory
 alias zshconfig='nano $HOME/.zshrc'
 
 # user custom zsh files
-source $ZSH/zsh-custom-files/custom-common-alias.zsh
-#source $ZSH/zsh-custom-files/colorize.zsh
-source $ZSH/zsh-custom-files/custom-docker-alias.zsh
+source $ZSHUSERFILES/pyenv-init.zsh
+source $ZSHUSERFILES/goenv-init.zsh
+source $ZSHUSERFILES/custom-common-alias.zsh
+source $ZSHUSERFILES/colorize.zsh
+source $ZSHUSERFILES/custom-docker-alias.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -92,7 +96,7 @@ ZSH_THEME_PYENV_NO_SYSTEM=true
 
 # fzf-tab
 autoload -U compinit; compinit
-source /home/frank/.oh-my-zsh/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
+source $ZSH/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
 # end fzf-tab
-
-alias aihelp='gollama --model="qwen2.5:3b-instruct-q4_K_M" --prompt=""'
+source $HOME.autoenv/activate.sh
+source $HOME.asdf/asdf.sh
