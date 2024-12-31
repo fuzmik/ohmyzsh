@@ -10,7 +10,7 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 
-#source $ZSHUSERFILES/pyenv-init.zsh
+source $ZSHUSERFILES/pyenv-init.zsh
 #source $ZSHUSERFILES/goenv-init.zsh
 source $ZSHUSERFILES/ssh-agent.zsh
 
@@ -76,8 +76,6 @@ setopt appendhistory
 alias zshconfig='nano $HOME/.zshrc'
 
 # user custom zsh files
-source $ZSHUSERFILES/pyenv-init.zsh
-source $ZSHUSERFILES/goenv-init.zsh
 source $ZSHUSERFILES/custom-common-alias.zsh
 source $ZSHUSERFILES/colorize.zsh
 source $ZSHUSERFILES/custom-docker-alias.zsh
