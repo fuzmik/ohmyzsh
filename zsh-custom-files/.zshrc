@@ -1,4 +1,4 @@
-#fastfetch
+fastfetch
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -11,7 +11,10 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 
 source $ZSH/zsh-custom-files/pyenv-init.zsh
+source $ZSH/zsh-custom-files/goenv-init.zsh
 source $ZSH/zsh-custom-files/ssh-agent.zsh
+
+DISABLE_LS_COLORS="true"
 
 ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 
@@ -28,14 +31,19 @@ plugins=(
     nmap
     ssh-agent
     python
-    asdf
     kitty
     ssh
+    pass
+    gpg-agent
+    keychain
+    sudo
+    fzf
+    pyenv
+    asdf
+    fzf-tab
     docker
     docker-compose
-    pass
-    conda
-    conda-env
+    extract
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -67,7 +75,7 @@ alias zshconfig='nano $HOME/.zshrc'
 
 # user custom zsh files
 source $ZSH/zsh-custom-files/custom-common-alias.zsh
-source $ZSH/zsh-custom-files/colorize.zsh
+#source $ZSH/zsh-custom-files/colorize.zsh
 source $ZSH/zsh-custom-files/custom-docker-alias.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -79,4 +87,12 @@ else
   [[ ! -f ~/.p10k-portable.zsh ]] || source ~/.p10k-portable.zsh
 fi
 
-#[ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
+
+ZSH_THEME_PYENV_NO_SYSTEM=true
+
+# fzf-tab
+autoload -U compinit; compinit
+source /home/frank/.oh-my-zsh/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
+# end fzf-tab
+
+alias aihelp='gollama --model="qwen2.5:3b-instruct-q4_K_M" --prompt=""'

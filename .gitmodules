@@ -19,3 +19,6 @@
 [submodule "fzf-tab"]
 	path = custom/plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab.git
+[submodule "ollama_zsh_completion"]
+	path = custom/plugins/ollama_zsh_completion
+	url = https://github.com/ocodo/ollama_zsh_completion.git
