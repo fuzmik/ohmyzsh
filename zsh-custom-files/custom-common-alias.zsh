@@ -34,3 +34,4 @@ alias -g L="| less"
 alias -g S="| sort"
 alias -g X='| xclip -selection clipboard'
 alias -g F='| fzf -m'
+alias -g K='| kitten @ send-key --match cmdline:gollama Enter'
