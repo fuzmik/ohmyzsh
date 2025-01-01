@@ -6,5 +6,5 @@ export GNUPGHOME="$HOME/.gnupg"
 export GCM_CREDENTIAL_STORE=gpg
 BROWSER=brave
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
-EDITOR=codium
+#EDITOR=codium
 export ZSHUSERFILES="$HOME/.oh-my-zsh/zsh-custom-files"

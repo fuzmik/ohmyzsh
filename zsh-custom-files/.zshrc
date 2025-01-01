@@ -32,7 +32,6 @@ plugins=(
     ssh-agent
     python
     kitty
-    ssh
     pass
     gpg-agent
     keychain
@@ -46,6 +45,8 @@ plugins=(
     extract
     ollama_zsh_completion
     autoenv
+    zsh-completions
+    zsh-history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -92,9 +93,8 @@ fi
 
 ZSH_THEME_PYENV_NO_SYSTEM=true
 
-# fzf-tab
-autoload -U compinit; compinit
-source $ZSH/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
-# end fzf-tab
 source $HOME/.autoenv/activate.sh
 source $HOME/.asdf/asdf.sh
+
+# remove $PATH ENTRIES
+typeset -U path

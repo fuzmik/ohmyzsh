@@ -1,2 +1,6 @@
 #export PATH="$PATH:/home/frank/.local/bin"
-source ~/.autoenv/activate.sh
+
+# fzf-tab
+autoload -U compinit; compinit 
+source $ZSH/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
+# end fzf-tab
