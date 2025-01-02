@@ -5,6 +5,7 @@ fastfetch
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
 #typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 #typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
@@ -14,7 +15,7 @@ source $ZSHUSERFILES/pyenv-init.zsh
 source $ZSHUSERFILES/goenv-init.zsh
 source $ZSHUSERFILES/ssh-agent.zsh
 
-DISABLE_LS_COLORS="true"
+#DISABLE_LS_COLORS="true"
 
 ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 
@@ -27,7 +28,6 @@ plugins=(
     history
     z
     colored-man-pages
-    colorize
     nmap
     ssh-agent
     python
@@ -78,7 +78,7 @@ alias zshconfig='nano $HOME/.zshrc'
 
 # user custom zsh files
 source $ZSHUSERFILES/custom-common-alias.zsh
-source $ZSHUSERFILES/colorize.zsh
+#source $ZSHUSERFILES/colorize.zsh
 source $ZSHUSERFILES/custom-docker-alias.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -91,10 +91,14 @@ else
 fi
 
 
-ZSH_THEME_PYENV_NO_SYSTEM=true
+export ZSH_THEME_PYENV_NO_SYSTEM=true
 
 source $HOME/.autoenv/activate.sh
 source $HOME/.asdf/asdf.sh
 
 # remove $PATH ENTRIES
 typeset -U path
+
+alias cat='glow'
+alias ask='echo $1'
+alias -g TT='|gollama --model qwen2.5:3b-instruct-q4_K_M'
