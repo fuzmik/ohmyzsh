@@ -1,4 +1,7 @@
 fastfetch
+
+[ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -9,32 +12,26 @@ fi
 #typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 #typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
-export ZSH="$HOME/.oh-my-zsh"
-
 source $ZSHUSERFILES/pyenv-init.zsh
 source $ZSHUSERFILES/goenv-init.zsh
 source $ZSHUSERFILES/ssh-agent.zsh
 
-#DISABLE_LS_COLORS="true"
+export ZSH="$HOME/.oh-my-zsh"
+
+DISABLE_LS_COLORS="true"
 
 ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 
 plugins=(
     git
-    archlinux
-    zsh-autosuggestions
-    zsh-syntax-highlighting
     systemd
     history
     z
     colored-man-pages
-    nmap
     ssh-agent
     python
     kitty
-    pass
     gpg-agent
-    keychain
     sudo
     fzf
     pyenv
@@ -47,6 +44,13 @@ plugins=(
     autoenv
     zsh-completions
     zsh-history-substring-search
+    conda
+    colorize
+    ssh
+    F-Sy-H
+    zsh-autosuggestions
+    alias-finder
+    aliases
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -67,7 +71,7 @@ alias ll='eza -al --icons=auto --sort=name --group-directories-first --grid'
 alias lt='eza -a --tree --level=1 --icons'
 
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
-source <(fzf --zsh)
+#source <(fzf --zsh)
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -91,7 +95,7 @@ else
 fi
 
 
-export ZSH_THEME_PYENV_NO_SYSTEM=true
+#export ZSH_THEME_PYENV_NO_SYSTEM=true
 
 source $HOME/.autoenv/activate.sh
 source $HOME/.asdf/asdf.sh
@@ -99,6 +103,30 @@ source $HOME/.asdf/asdf.sh
 # remove $PATH ENTRIES
 typeset -U path
 
-alias cat='glow'
+#alias cat='glow'
 alias ask='echo $1'
 alias -g TT='|gollama --model qwen2.5:3b-instruct-q4_K_M'
+
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+
+export ASDF_DEFAULT_TOOL_VERSIONS_FILENAME=.tool-versions
+export ASDF_DATA_DIR=/home/frank/.asdf
+export ASDF_DIR=/home/frank/.asdf
+export ASDF_CONFIG_FILE=/home/frank/.asdfrc
+
+eval "$(direnv hook zsh)"
+source /home/frank/.oh-my-zsh/zsh-custom-files/conda-zsh-completions.zsh
+
+# bun completions
+[ -s "/home/frank/.bun/_bun" ] && source "/home/frank/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# fzf-tab
+source /home/frank/.oh-my-zsh/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
+autoload -U compinit; compinit
+# end fzf-tab

@@ -1,6 +1,9 @@
-#export PATH="$PATH:/home/frank/.local/bin"
-
-# fzf-tab
-autoload -U compinit; compinit 
-source $ZSH/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
-# end fzf-tab
+## yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
