@@ -1,7 +1,3 @@
-fastfetch
-
-[ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -12,15 +8,15 @@ fi
 #typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 #typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
+export ZSH="$HOME/.oh-my-zsh"
+
 source $ZSHUSERFILES/pyenv-init.zsh
 source $ZSHUSERFILES/goenv-init.zsh
 source $ZSHUSERFILES/ssh-agent.zsh
 
-export ZSH="$HOME/.oh-my-zsh"
-
 DISABLE_LS_COLORS="true"
 
-ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
+ZSH_THEME="powerlevel10k/powerlevel9k" # set by `omz`
 
 plugins=(
     git
@@ -28,7 +24,6 @@ plugins=(
     history
     z
     colored-man-pages
-    ssh-agent
     python
     kitty
     gpg-agent
@@ -46,11 +41,9 @@ plugins=(
     zsh-history-substring-search
     conda
     colorize
-    ssh
     F-Sy-H
-    zsh-autosuggestions
-    alias-finder
-    aliases
+    ssh
+    ssh-agent
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -71,7 +64,7 @@ alias ll='eza -al --icons=auto --sort=name --group-directories-first --grid'
 alias lt='eza -a --tree --level=1 --icons'
 
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
-#source <(fzf --zsh)
+source <(fzf --zsh)
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -108,6 +101,7 @@ alias ask='echo $1'
 alias -g TT='|gollama --model qwen2.5:3b-instruct-q4_K_M'
 
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+#export DOCKER_HOST=ssh://frank@docker.lan
 
 export ASDF_DEFAULT_TOOL_VERSIONS_FILENAME=.tool-versions
 export ASDF_DATA_DIR=/home/frank/.asdf
@@ -128,5 +122,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # fzf-tab
 source /home/frank/.oh-my-zsh/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
-autoload -U compinit; compinit
+autoload -Uz compinit && compinit
+#autoload -U compinit; compinit
 # end fzf-tab

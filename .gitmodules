@@ -22,3 +22,6 @@
 [submodule "ollama_zsh_completion"]
 	path = custom/plugins/ollama_zsh_completion
 	url = https://github.com/ocodo/ollama_zsh_completion.git
+[submodule "fast-syntax-highlighting"]
+	path = custom/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting.git
