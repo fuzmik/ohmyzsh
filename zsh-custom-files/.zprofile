@@ -7,3 +7,18 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+# load last
+source $ZSHUSERFILES/pyenv-init.zsh
+source $ZSHUSERFILES/goenv-init.zsh
+source $ZSHUSERFILES/ssh-agent.zsh
+source /home/frank/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# user custom zsh files
+source $ZSHUSERFILES/custom-common-alias.zsh
+#source $ZSHUSERFILES/colorize.zsh
+source $ZSHUSERFILES/custom-docker-alias.zsh
+source $HOME/.autoenv/activate.sh
+source $HOME/.asdf/asdf.sh
+source /home/frank/.oh-my-zsh/zsh-custom-files/conda-zsh-completions.zsh
+# Set-up FZF key bindings (CTRL R for fuzzy history finder)
+source <(fzf --zsh)
