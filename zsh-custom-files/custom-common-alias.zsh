@@ -26,6 +26,7 @@ alias hyp='hyprctl'
 alias pckupg='sudo pacman -Syy && pacman -Qu'
 alias ckupg='yay -Syy && yay -Qu && pckupg'
 alias duf='duf -only local,network'
+alias ts='tailscale'
 
 # Command line head / tail shortcuts
 alias -g H='| head'
