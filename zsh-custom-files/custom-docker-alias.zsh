@@ -20,5 +20,5 @@ function dc-runlike {
     container_id=$(docker ps --format "{{.Names}}" | fzf)
 
     # Run docker-autocompose with the selected container ID
-    docker run --rm -v /run/user/1000/docker.sock:/run/user/1000/docker.sock/assaflavie/runlike "$container_id"
+    docker run --rm -v /var/run/docker.sock:/var/run/docker.sock/assaflavie/runlike "$container_id"
 }
