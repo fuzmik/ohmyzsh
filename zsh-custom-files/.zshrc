@@ -38,10 +38,13 @@ plugins=(
     zsh-completions
     conda
     colorize
-    ssh
-    ssh-agent
     fast-syntax-highlighting
     zsh-autosuggestions
+    nmap
+    command-not-found
+    ssh-agent
+    tailscale
+    jsontools
 )
 autoload -Uz compinit; compinit
 
