@@ -12,6 +12,10 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=verbose
 export ZSH="$HOME/.oh-my-zsh"
 
 
+ZSH_WEB_SEARCH_ENGINES=(
+	searx "https://searxng.ovcn.ddnsfree.com/search?q="
+	)
+
 DISABLE_LS_COLORS="true"
 
 ZSH_THEME="powerlevel10k/powerlevel9k" # set by `omz`
@@ -38,17 +42,20 @@ plugins=(
     zsh-completions
     conda
     colorize
-    fast-syntax-highlighting
     zsh-autosuggestions
     nmap
     command-not-found
     ssh-agent
     tailscale
     jsontools
+    rbw
+    zsh-syntax-highlighting
+    fast-syntax-highlighting
+    web-search
 )
 autoload -Uz compinit; compinit
 
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src:$fpath
 
 source $ZSH/oh-my-zsh.sh
 

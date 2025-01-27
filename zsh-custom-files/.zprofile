@@ -29,3 +29,4 @@ source $HOME/.asdf/asdf.sh
 source /home/frank/.oh-my-zsh/zsh-custom-files/conda-zsh-completions.zsh
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
+source <(1panel completion zsh)

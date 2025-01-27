@@ -26,3 +26,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 #export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export WEB_SEARCH_MODEL='gemini:gemini-1.5-flash-latest'
+export FZF_BASE=/usr/share/fzf
