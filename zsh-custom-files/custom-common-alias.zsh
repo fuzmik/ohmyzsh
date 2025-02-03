@@ -28,6 +28,9 @@ alias ckupg='yay -Syy && yay -Qu && pckupg'
 alias duf='duf -only local,network'
 alias ts='tailscale'
 alias warp='warp-cli'
+alias trip='sudo trip --config-file=$XDG_CONFIG_HOME/trippy/trippy.toml'
+alias fzcat="ls --only-files | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+alias nvitop='nvitop -m compact --colorful'
 
 # Command line head / tail shortcuts
 alias -g H='| head'
