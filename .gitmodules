@@ -1,19 +1,19 @@
-[submodule "custom/themes/powerlevel10k"]
+[submodule "powerlevel10k"]
 	path = custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
-[submodule "custom/plugins/zsh-syntax-highlighting"]
+[submodule "zsh-syntax-highlighting"]
 	path = custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "custom/plugins/zsh-autosuggestions"]
+[submodule "zsh-autosuggestions"]
 	path = custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "custom/plugins/zsh-history-substring-search"]
+[submodule "zsh-history-substring-search"]
 	path = custom/plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
-[submodule "custom/plugins/zsh-completions"]
+[submodule "zsh-completions"]
 	path = custom/plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
-[submodule "custom/plugins/conda-zsh-completion"]
+[submodule "conda-zsh-completion"]
 	path = custom/plugins/conda-zsh-completion
 	url = https://github.com/conda-incubator/conda-zsh-completion
 [submodule "fzf-tab"]
