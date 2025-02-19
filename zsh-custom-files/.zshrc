@@ -30,10 +30,8 @@ plugins=(
     kitty
     gpg-agent
     sudo
-    fzf
     pyenv
     asdf
-    fzf-tab
     docker
     docker-compose
     extract
@@ -52,10 +50,17 @@ plugins=(
     zsh-syntax-highlighting
     fast-syntax-highlighting
     web-search
+    fzf-tab
+    ruby
+    npm
+    gitignore
+    node
+    nvm
+    fzf
 )
-autoload -Uz compinit; compinit
+#autoload -Uz compinit; compinit
 
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src:$fpath
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src:/home/frank/.asdf/installs/bat/0.25.0/autocomplete:$fpath
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,7 +99,7 @@ fi
 
 #alias cat='glow'
 alias ask='echo $1'
-alias -g TT='|gollama --model qwen2.5:3b-instruct-q4_K_M'
+alias -g TT='|gollama --model MFDoom/deepseek-r1-tool-calling:1.5b'
 
 
 eval "$(direnv hook zsh)"
@@ -102,10 +107,11 @@ eval "$(direnv hook zsh)"
 # bun completions
 [ -s "/home/frank/.bun/_bun" ] && source "/home/frank/.bun/_bun"
 
-
+# navi widget
+eval "$(navi widget zsh)"
 
 # fzf-tab
 source /home/frank/.oh-my-zsh/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
 #autoload -Uz compinit; compinit
-#autoload -U compinit; compinit
+autoload -U compinit; compinit
 # end fzf-tab
