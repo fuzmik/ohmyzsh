@@ -92,10 +92,10 @@
     #nnn                     # nnn shell (https://github.com/jarun/nnn)
     #lf                      # lf shell (https://github.com/gokcehan/lf)
     #xplr                    # xplr shell (https://github.com/sayanarijit/xplr)
-    vim_shell               # vim shell indicator (:sh)
+    #vim_shell               # vim shell indicator (:sh)
     #midnight_commander      # midnight commander shell (https://midnight-commander.org/)
     #nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
-    chezmoi_shell           # chezmoi shell (https://www.chezmoi.io/)
+    #chezmoi_shell           # chezmoi shell (https://www.chezmoi.io/)
     # vi_mode               # vi mode (you don't need this if you've enabled prompt_char)
     vpn_ip                # virtual private network indicator
     load                  # CPU load
@@ -1663,14 +1663,14 @@
   typeset -g POWERLEVEL9K_VPN_IP_BACKGROUND=6
   # When on VPN, show just an icon without the IP address.
   # Tip: To display the private IP address when on VPN, remove the next line.
-  typeset -g POWERLEVEL9K_VPN_IP_CONTENT_EXPANSION=
+  #typeset -g POWERLEVEL9K_VPN_IP_CONTENT_EXPANSION=
   # Regular expression for the VPN network interface. Run `ifconfig` or `ip -4 a show` while on VPN
   # to see the name of the interface.
   typeset -g POWERLEVEL9K_VPN_IP_INTERFACE='(gpd|wg|(.*tun)|tailscale|CloudflareWARP)[0-9]*|(zt.*)'
   # If set to true, show one segment per matching network interface. If set to false, show only
   # one segment corresponding to the first matching network interface.
   # Tip: If you set it to true, you'll probably want to unset POWERLEVEL9K_VPN_IP_CONTENT_EXPANSION.
-  typeset -g POWERLEVEL9K_VPN_IP_SHOW_ALL=false
+  typeset -g POWERLEVEL9K_VPN_IP_SHOW_ALL=true
   # Custom icon.
   # typeset -g POWERLEVEL9K_VPN_IP_VISUAL_IDENTIFIER_EXPANSION='⭐'
 

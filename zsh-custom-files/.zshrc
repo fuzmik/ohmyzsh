@@ -31,7 +31,6 @@ plugins=(
     gpg-agent
     sudo
     pyenv
-    asdf
     docker
     docker-compose
     extract
@@ -47,8 +46,6 @@ plugins=(
     tailscale
     jsontools
     rbw
-    zsh-syntax-highlighting
-    fast-syntax-highlighting
     web-search
     fzf-tab
     ruby
@@ -57,10 +54,13 @@ plugins=(
     node
     nvm
     fzf
+    fast-syntax-highlighting
+    zsh-syntax-highlighting
+    gh
 )
 #autoload -Uz compinit; compinit
 
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src:/home/frank/.asdf/installs/bat/0.25.0/autocomplete:$fpath
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src:$fpath
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,7 +111,9 @@ eval "$(direnv hook zsh)"
 eval "$(navi widget zsh)"
 
 # fzf-tab
-source /home/frank/.oh-my-zsh/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
+source /home/frank/.oh-my-zsh/custom/plugins/fzf-tab/fzf-tab.zsh
 #autoload -Uz compinit; compinit
 autoload -U compinit; compinit
 # end fzf-tab
+eval "$(gh copilot alias -- zsh)"
+eval "$(gh copilot alias -- zsh)"

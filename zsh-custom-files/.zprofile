@@ -32,3 +32,5 @@ source <(1panel completion zsh)
 eval "$(uv generate-shell-completion zsh)"
 source <(fzf --zsh)
 eval "$(fzf --zsh)"
+source /home/frank/.oh-my-zsh/custom/plugins/zsh-completions/zsh-completions.plugin.zsh
+source /home/frank/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
