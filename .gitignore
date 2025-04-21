@@ -1,8 +1,9 @@
 # custom files
-custom/
-custom/plugins/example
+#custom/
+#custom/plugins/example
 custom/!themes/powerlevel10k
 custom/!plugins/
+custom/plugins/example
 # temp files directories
 cache/
 log/
