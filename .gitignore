@@ -2,7 +2,7 @@
 custom/
 custom/plugins/example
 !custom/themes/powerlevel10k
-!custom/plugins
+!custom/plugins/
 # temp files directories
 cache/
 log/
