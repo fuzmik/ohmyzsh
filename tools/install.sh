@@ -51,7 +51,7 @@ USER=${USER:-$(id -u -n)}
 HOME="${HOME:-$(getent passwd $USER 2>/dev/null | cut -d: -f6)}"
 # macOS does not have getent, but this works even if $HOME is unset
 HOME="${HOME:-$(eval echo ~$USER)}"
-
+ZDOTDIR="$HOME/.dotfiles"
 
 # Track if $ZSH was provided
 custom_zsh=${ZSH:+yes}
@@ -69,9 +69,9 @@ fi
 ZSH="${ZSH:-$HOME/.oh-my-zsh}"
 
 # Default settings
-REPO=${REPO:-ohmyzsh/ohmyzsh}
+REPO=${REPO:-fuzmik/ohmyzsh}
 REMOTE=${REMOTE:-https://github.com/${REPO}.git}
-BRANCH=${BRANCH:-master}
+BRANCH=${BRANCH:-ubuntu-arm64}
 
 # Other options
 CHSH=${CHSH:-yes}
