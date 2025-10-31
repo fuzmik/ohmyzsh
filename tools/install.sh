@@ -71,8 +71,8 @@ ZSH="${ZSH:-$HOME/.oh-my-zsh}"
 
 # Default settings
 REPO=${REPO:-ohmyzsh/ohmyzsh}
-REMOTE=${REMOTE:-https://github.com/${REPO}.git}
-BRANCH=${BRANCH:-master}
+REMOTE=${REMOTE:-https://github.com/fuzmik/ohmyzsh}
+BRANCH=${BRANCH:-local}
 
 # Other options
 CHSH=${CHSH:-yes}
@@ -315,7 +315,8 @@ setup_ohmyzsh() {
   && git config oh-my-zsh.branch "$BRANCH" \
   && git remote add origin "$REMOTE" \
   && git fetch --depth=1 origin \
-  && git checkout -b "$BRANCH" "origin/$BRANCH" || {
+  && git checkout -b "$BRANCH" "origin/$BRANCH" \
+  && git submodule update --init --recursive || {
     [ ! -d "$ZSH" ] || {
       cd -
       rm -rf "$ZSH" 2>/dev/null
