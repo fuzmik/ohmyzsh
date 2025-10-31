@@ -13,3 +13,5 @@ log/
 
 # zcompile cached files
 *.zwc
+plans
+GEMINI.md
