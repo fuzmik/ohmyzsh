@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Prompt user to press Enter to skip or type anything to print restart policy
+read -p "Press Enter to skip printing restart policy, or type anything to print it: " print_restart_policy
+
+# Check if user input is empty (Enter pressed)
+if [[ -z "$print_restart_policy" ]]; then
+    print_restart=false
+else
+    print_restart=true
+fi
+
+docker ps -a --format '{{.Names}} {{.Image}}' | sort | while read -r name image; do
+    printf "%-20s: " "$name"
+    printf "%-32s, " "$image"
+
+    if [[ $print_restart_policy == true ]]; then
+        restart_policy=$(docker inspect --format '{{.HostConfig.RestartPolicy.Name}}' "$name")
+        printf "RestartPolicy=%-10s, " "$restart_policy"
+    fi
+
+#    network_info=$(docker inspect -f '{{range $key, $value := .NetworkSettings.Networks}}{{printf "%s = %-39s\n" $key $value.IPAddress}}{{end}}' "$name")
+    network_info=$(docker inspect -f '{{range $key, $value := .NetworkSettings.Networks}}{{printf "%s = \033[0;31m%-39s\033[0m\n" $key $value.IPAddress}}{{end}}' "$name")
+    echo "$network_info"
+done
+
+docker ps --format "table {{.Names}}\t{{.Size}}\t{{.Status}}\t{{.ID}}" | tail -n +2 | sort;
