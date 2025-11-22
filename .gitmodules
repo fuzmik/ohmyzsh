@@ -1,7 +1,3 @@
-[submodule "custom/plugins/conda-zsh-completion"]
-    path = custom/plugins/conda-zsh-completion
-    url = https://github.com/user/repo.git
-
 [submodule "custom/plugins/example"]
     path = custom/plugins/example
     url = https://github.com/user/repo.git
