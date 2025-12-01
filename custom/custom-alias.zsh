@@ -40,7 +40,9 @@ alias hyd-log="glow $XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/hyprland.
 alias lzg='lazygit'
 alias lzd='lazydocker'
 
-alias gemini='gemini --model gemini-2.5-flash-lite'
+alias ss='ss -antp4rul'
+
+#alias gemini='gemini --model gemini-2.5-flash-lite'
 
 # Command line head / tail shortcuts
 alias -g H='| head'
